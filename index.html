@@ -7,9 +7,11 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
   <title>Frontend Mentor | E-commerce product page</title>
-
+  <link rel="stylesheet" href="./styles.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
@@ -24,30 +26,45 @@
 </head>
 
 <body>
-  <header>
-    <div class="left">
-      <div class="logo_wrapper">
-        <i class="logo"></i>
+  <header class="container">
+    <div class="logo_wrapper">
+      <i class="logo"></i>
+    </div>
+    <nav>
+      <ul class="nav_list">
+        <li class="nav_item"><a href="#">Collections</a></li>
+        <li class="nav_item"><a href="#">Men</a></li>
+        <li class="nav_item"><a href="#">Women</a></li>
+        <li class="nav_item"><a href="#">About</a></li>
+        <li class="nav_item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cart_button">
+      <i class="cart_icon"></i>
+      <div class="cart">
+        <span class="title">Card</span>
+        <div class="cart_items">
+          <div class="cart_item">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="product">
+            <div class="info">
+              <span class="name">Fall Limited Edition Sneakers</span>
+              <span class="price"> $125.00</span>
+              <span>x</span>
+              <span id="qty">3</span>
+              <span class="total">$375.00</span>
+            </div>
+            <div class="delete_btn">
+              <i class="delete"></i>
+            </div>
+          </div>
+        </div>
+        <button class="checkout">Checkout</button>
       </div>
-      <nav>
-        <ul class="nav_list">
-          <li class="nav_item"><a href="#">Collections</a></li>
-          <li class="nav_item"><a href="#">Men</a></li>
-          <li class="nav_item"><a href="#">Women</a></li>
-          <li class="nav_item"><a href="#">About</a></li>
-          <li class="nav_item"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
     </div>
-    <div class="right">
-      <button class="cart_button">
-        <i class="cart_icon"></i>
-        <span class="cart_count">0</span>
-      </button>
-      <img src="./images/image-avatar.png" alt="avatar">
-    </div>
+
+    <img src="./images/image-avatar.png" alt="avatar" class="avatar">
   </header>
-  <main>
+  <main class="container">
     <div class="product">
       <div class="slides">
         <img src="./images/image-product-1.jpg" alt="product">
@@ -84,10 +101,13 @@
       </div>
     </div>
   </main>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://www.frontendmentor.io/profile/TranDanh1122">Trần Danh</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/TranDanh1122">Trần Danh</a>.
+    </div>
+  </footer>
+  <script src="./script.js"></script>
 </body>
 
 </html>

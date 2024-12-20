@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --pale_orange: hsl(25, 100%, 94%);
+    --very_dark_blue: hsl(220, 13%, 13%);
+    --dark_grayish_blue: hsl(219, 9%, 45%);
+    --grayish_blue: hsl(220, 14%, 75%);
+    --light_grayish_blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsla(0, 0%, 0%, 75%);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+img {
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.logo_wrapper .logo {
+    margin: 3rem 0;
+    width: 9rem;
+    height: 1.5rem;
+    display: block;
+    --webkit-mask-image: url(./images/logo.svg) no-repeat center;
+    mask: url(./images/logo.svg) no-repeat center;
+    background-color: black;
+}
+
+header {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 1fr auto auto;
+    border-bottom: 1px solid var(--grayish_blue);
+}
+
+nav {
+    margin: auto 0;
+}
+
+.nav_list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 2rem;
+    margin-left: 3.5rem;
+    line-height: 1.5rem;
+}
+
+.nav_list a {
+    color: var(--dark_grayish_blue);
+    cursor: pointer;
+    position: relative;
+}
+
+.nav_list a:hover {
+    color: black;
+}
+
+.nav_list a:hover::before {
+    content: "";
+    width: 100%;
+    height: .25rem;
+    background-color: var(--orange);
+    position: absolute;
+    top: 4rem;
+    left: 0;
+}
+
+.cart_button {
+    margin: auto 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart_icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    --webkit-mask-image: url(./images/icon-cart.svg) no-repeat center;
+    mask: url(./images/icon-cart.svg) no-repeat center;
+    background-color: var(--black);
+    margin-right: 4rem;
+}
+
+.cart_button::before {
+    content: "0";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--orange);
+    top: -65%;
+    right: 55%;
+    color: var(--white);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+}
+
+.cart {
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    position: absolute;
+    z-index: 2;
+    width: 22.5rem;
+    top: 2rem;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    display: none;
+}
+.cart[show] {
+    display: block;
+}
+
+.cart .title {
+    display: block;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--grayish_blue);
+}
+
+.cart .cart_items {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart .cart_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+
+}
+.cart_item .info {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+}
+
+.cart_item .info span {
+    display: inline-block;
+    line-height: 1.5rem;
+    color: var(--dark_grayish_blue);
+
+}
+.cart_item  .name {
+    flex-basis: 100%;
+}
+.cart_item .total {
+    font-weight: 700;
+    color: var(--black);
+}
+.cart img {
+    width: 3rem;
+    height: 3rem;
+}
+.cart .checkout {
+    font-weight: 700;
+    padding: 1.125rem 0;
+    width: 100%;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    background-color: var(--orange);
+}
+.cart .checkout:hover {
+    background-color: var(--pale_orange);
+}
+.cart .delete {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    --webkit-mask-image: url(./images/icon-delete.svg) no-repeat center;
+    mask: url(./images/icon-delete.svg) no-repeat center;
+    background-color: var(--dark_grayish_blue);
+    cursor: pointer;
+}
+header .avatar {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--orange);
+    margin: auto 0;
+}
+
+main {
+    margin-top: 5.75rem !important;
+}
