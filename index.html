@@ -27,7 +27,9 @@
 
 <body>
   <div class="overlay"></div>
+  <div class="overlay_menu"></div>
   <header class="container">
+    <div class="mobile_menu"><i></i></div>
     <div class="logo_wrapper">
       <i class="logo"></i>
     </div>
@@ -42,27 +44,28 @@
     </nav>
     <div class="cart_button">
       <i class="cart_icon"></i>
-      <div class="cart">
-        <span class="title">Card</span>
-        <div class="cart_items">
-          <div class="cart_item">
-            <img src="./images/image-product-1-thumbnail.jpg" alt="product">
-            <div class="info">
-              <span class="name">Fall Limited Edition Sneakers</span>
-              <span class="price"> $125.00</span>
-              <span>x</span>
-              <span id="qty">3</span>
-              <span class="total">$375.00</span>
-            </div>
-            <div class="delete_btn">
-              <i class="delete"></i>
-            </div>
+
+      <sapn class="cart_qty">0</sapn>
+    </div>
+    <div empty class="cart">
+      <span class="title">Cart</span>
+      <div class="cart_items">
+        <div class="cart_item">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="product">
+          <div class="info">
+            <span class="name">Fall Limited Edition Sneakers</span>
+            <span class="price"> $125.00</span>
+            <span>x</span>
+            <span id="qty">3</span>
+            <span class="total">$375.00</span>
+          </div>
+          <div class="delete_btn">
+            <i class="delete"></i>
           </div>
         </div>
-        <button class="checkout">Checkout</button>
       </div>
+      <button class="checkout">Checkout</button>
     </div>
-
     <img src="./images/image-avatar.png" alt="avatar" class="avatar">
   </header>
   <main class="container">
@@ -70,7 +73,8 @@
       <div class="slides">
         <span class="previous"><i></i></span>
         <span class="next"><i></i></span>
-        <img src="./images/image-product-1.jpg" alt="product" class="main">
+        <img src="./images/image-product-1.jpg" alt="product" class="main"
+          classic="./images/image-product-1-thumbnail.jpg">
         <div class="thumbnails_wrapper">
           <div class="thumbnails">
             <div active main="./images/image-product-1.jpg" class="thumbnail">
@@ -97,26 +101,29 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="product_info">
-      <span class="category">Sneaker Company</span>
-      <h1> Fall Limited Edition Sneakers</h1>
-      <p class="desc">
-        These low-profile sneakers are your perfect casual wear companion. Featuring a
-        durable rubber outer sole, they’ll withstand everything the weather can offer.
-      </p>
-      <div class="price_wrapper">
-        <span class="price"> $125.00</span>
-        <span class="sale"> 50%</span>
+      <div class="product_info">
+        <span class="category">Sneaker Company</span>
+        <h1 product_id="1" class="product_name"> Fall Limited Edition Sneakers</h1>
+        <p class="desc">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <div class="price_wrapper">
+          <span price="125" class="product_price"> $125.00</span>
+          <span class="sale"> 50%</span>
+          <span class="old_price">$250.00</span>
+        </div>
+        <div class="wrapper">
+          <div class="qty_wrapper">
+            <span class="minus changeQty"><i></i></span>
+            <input type="text" class="qty" value="1">
+            <span class="add changeQty"><i></i></span>
+          </div>
+          <button class="add_to_cart"><i></i>Add to cart</button>
+        </div>
       </div>
-      <span class="old_price">
-        $250.00
-      </span>
-      <div class="wrapper">
-        <input type="number" min="1" value="1">
-        <button class="add_to_cart">Add to cart</button>
-      </div>
     </div>
+
   </main>
   <footer>
     <div class="attribution">
@@ -126,6 +133,21 @@
   </footer>
   <script src="./vendor/slider/slider.js"></script>
   <script src="./script.js"></script>
+  <script>
+    let overlayMenu = document.querySelector('.overlay_menu')
+    let header = document.querySelector('header')
+    let clickOverlay = () => {
+      header.toggleAttribute('mobile')
+      overlayMenu.toggleAttribute('show')
+    }
+    let openMenu = () => {
+      header.toggleAttribute('mobile')
+      overlayMenu.toggleAttribute('show')
+    }
+    let mobileMenu = document.querySelector('.mobile_menu')
+    mobileMenu.addEventListener('click', openMenu)
+    overlayMenu.addEventListener('click', clickOverlay)
+  </script>
 </body>
 
 </html>
