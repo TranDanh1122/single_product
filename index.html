@@ -26,6 +26,7 @@
 </head>
 
 <body>
+  <div class="overlay"></div>
   <header class="container">
     <div class="logo_wrapper">
       <i class="logo"></i>
@@ -67,16 +68,32 @@
   <main class="container">
     <div class="product">
       <div class="slides">
-        <img src="./images/image-product-1.jpg" alt="product">
-        <div class="thumnails">
-          <div class="thumnail">
-            <img src="./images/image-product-1-thumbnail.jpg" alt="">
-            <img src="./images/image-product-2-thumbnail.jpg" alt="">
-            <img src="./images/image-product-3-thumbnail.jpg" alt="">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="">
+        <span class="previous"><i></i></span>
+        <span class="next"><i></i></span>
+        <img src="./images/image-product-1.jpg" alt="product" class="main">
+        <div class="thumbnails_wrapper">
+          <div class="thumbnails">
+            <div active main="./images/image-product-1.jpg" class="thumbnail">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="">
+            </div>
+            <div main="./images/image-product-2.jpg" class="thumbnail">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="">
+            </div>
+            <div main="./images/image-product-3.jpg" class="thumbnail">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="">
+            </div>
+            <div main="./images/image-product-4.jpg" class="thumbnail">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="">
+            </div>
+            <div main="./images/image-product-2.jpg" class="thumbnail">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="">
+            </div>
+            <div main="./images/image-product-3.jpg" class="thumbnail">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="">
+            </div>
+            <div main="./images/image-product-4.jpg" class="thumbnail">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -107,6 +124,7 @@
       Coded by <a href="https://www.frontendmentor.io/profile/TranDanh1122">Trần Danh</a>.
     </div>
   </footer>
+  <script src="./vendor/slider/slider.js"></script>
   <script src="./script.js"></script>
 </body>
 

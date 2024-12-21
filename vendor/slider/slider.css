@@ -1,0 +1,96 @@
+.slides {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    position: relative;
+}
+.slides .main {
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnails_wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.thumbnails {
+    width: fit-content !important;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.slides .previous,
+.slides .next {
+    display: block;
+    position: absolute;
+    background-color: var(--white);
+    top: calc(50% - 1.5rem);
+    opacity: .75;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid var(--grayish_blue);
+}
+
+.slides .next {
+    left: 30rem;
+}
+
+.slides .previous {
+    left: -2.5rem;
+}
+
+.slides .next i,
+.slides .previous i {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+}
+
+.slides .next i {
+    mask: url(../../images/icon-next.svg) center no-repeat;
+    -webkit-mask: url(../../images/icon-next.svg) center no-repeat;
+    background-color: var(--very_dark_blue);
+}
+
+.slides .previous i {
+    mask: url(../../images/icon-previous.svg) center no-repeat;
+    -webkit-mask: url(../../images/icon-previous.svg) center no-repeat;
+    background-color: var(--very_dark_blue);
+
+}
+
+.thumbnails .thumbnail img {
+    width: 5.5rem;
+    aspect-ratio: 1;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    opacity: 0.5;
+}
+
+.thumbnail[active] img {
+    opacity: 0.5;
+    border: 3px solid var(--orange);
+}
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.overlay .slides {
+    max-width: 32rem;
+}
